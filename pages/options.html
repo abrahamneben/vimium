@@ -35,6 +35,35 @@
     <header>Vimium Options</header>
     <input type="hidden" id="settingsVersion"/>
     <table id="options">
+      <tr id="excludedClassSelectorsSection">
+        <td class="caption">Excluded Class<br />Selectors</td>
+        <td>
+          <div class="help">
+            <div class="example">
+              Disable link hints for elements with certain class selectors, one selector per line.
+            </div>
+          </div>
+          <div>
+            <textarea id="excludedClassSelectors" class="code" type="text"></textarea>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="forceClickableClassSelectorsSection"></tr>
+        <td class="caption">Force Clickable<br />Class Selectors</td>
+        <td>
+          <div class="help">
+            <div class="example">
+              Force link hints for elements with certain class selectors, one selector per line.
+            </div>
+          </div>
+          <div>
+            <textarea id="forceClickableClassSelectors" class="code" type="text"></textarea>
+          </div>
+        </td>
+      </tr>
+
+
       <tr id="exclusionRulesSection">
         <td class="caption">Excluded URLs<br />and keys</td>
         <td>

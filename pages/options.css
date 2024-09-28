@@ -109,6 +109,16 @@ div#exampleKeyMapping {
   margin-left: 10px;
   margin-top: 5px;
 }
+textarea#excludedClassSelectors {
+  width: 100%;;
+  min-height: 140px;
+  white-space: pre;
+}
+textarea#forceClickableClassSelectors {
+  width: 100%;;
+  min-height: 140px;
+  white-space: pre;
+}
 input#linkHintCharacters {
   width: 100%;
 }

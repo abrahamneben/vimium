@@ -1102,6 +1102,14 @@ const LocalHints = {
 
     if (!isClickable) isClickable = this.checkForAngularJs(element);
 
+    let forceClickableClassSelectors = Settings.get("forceClickableClassSelectors").split("\n");
+
+    if (forceClickableClassSelectors.some(className => element.matches(className)))
+    {
+      // console.log("force including " + element)
+      isClickable = true;
+    }
+
     if (element.hasAttribute("onclick")) {
       isClickable = true;
     } else {
@@ -1309,7 +1317,12 @@ const LocalHints = {
     // NOTE(mrmr1993): Our previous method (combined XPath and DOM traversal for jsaction) couldn't
     // provide this, so it's necessary to check whether elements are clickable in order, as we do
     // below.
+    let excludedClassSelectors = Settings.get("excludedClassSelectors").split("\n");
     for (const element of Array.from(elements)) {
+      if (excludedClassSelectors.some(className => element.matches(className))) {
+        // console.log("excluding " + element)
+        continue;
+      }
       if (!requireHref || !!element.href) {
         const hints = this.getLocalHintsForElement(element);
         localHints.push(...hints);

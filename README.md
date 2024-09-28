@@ -1,3 +1,18 @@
+# Changes in this Fork
+
+Vimium doesn't always identify *all* clickable elements, and sometimes
+it identifies *too many* clickable elements and clutters the screen
+with link hints. To resolve these issues, this fork adds two new fields
+in the Vimium options.
+
+#### Excluded class selectors
+Enter a newline-separated list of CSS selectors to exclude them from
+getting link hints.
+
+#### Force clickable class selectors
+Enter a newline-separated list of CSS selectors to force Vimium to treat
+them as clickable.
+
 # Vimium - The Hacker's Browser
 
 Vimium is a browser extension that provides keyboard-based navigation and control of the web in the
